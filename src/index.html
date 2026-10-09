@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How your GOAL campaign works</title>
+<meta name="description" content="A 45 second explainer of how a GOAL digital ad campaign turns paid clicks into leads for your agency.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body class="mode-player">
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13l2.5-7.5h13L21 13"/><path d="M3 13v5a1.5 1.5 0 0 0 1.5 1.5h15A1.5 1.5 0 0 0 21 18v-5h-5l-1.5 2.5h-5L8 13H3z"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="2.5"/><path d="M8 8.5h8M8 12.5h8M8 16.5h5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 5.5v13l10.5-6.5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5.5v13M16 5.5v13"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.5-5.8"/><path d="M4 4.5v4.5h4.5"/></symbol>
+  <symbol id="i-caption" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M7.5 12h9M7.5 15h5"/></symbol>
+  <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M5 3l14.5 9-6.3 1.4-3.4 6.1z"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><rect x="5.5" y="3.5" width="13" height="17" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
+</svg>
+
+<main class="app">
+  <div class="stage-wrap" id="stage-wrap">
+    <div class="stage" id="stage" data-theme="navy">
+      <canvas class="grid-canvas" id="grid" width="1920" height="1080" aria-hidden="true"></canvas>
+
+      <header class="topbar">
+        <img class="wordmark wordmark-top" src="../goal-wordmark-white.png" alt="GOAL">
+        <nav class="segments" aria-label="Scenes">
+          <button class="seg" type="button" data-index="0" aria-label="Scene 1, how your GOAL campaign works"><span class="seg-fill"></span></button>
+          <button class="seg" type="button" data-index="1" aria-label="Scene 2, your ad"><span class="seg-fill"></span></button>
+          <button class="seg" type="button" data-index="2" aria-label="Scene 3, clicks to leads"><span class="seg-fill"></span></button>
+          <button class="seg" type="button" data-index="3" aria-label="Scene 4, every lead"><span class="seg-fill"></span></button>
+          <button class="seg" type="button" data-index="4" aria-label="Scene 5, recap"><span class="seg-fill"></span></button>
+        </nav>
+      </header>
+
+      <div class="scenes" id="scenes">
+
+        <!-- Scene 1: intro -->
+        <section class="scene scene-navy s1" id="scene-1" data-scene="intro" aria-label="Scene 1">
+          <div class="hero">
+            <div class="mark-wrap">
+              <span class="ring ring-a" aria-hidden="true"></span>
+              <span class="ring ring-b" aria-hidden="true"></span>
+              <img class="mark" src="../goal-mark.png" alt="GOAL radar mark">
+            </div>
+            <h1 class="headline on-dark beat">How your GOAL campaign works.</h1>
+          </div>
+          <nav class="nojs-nav" aria-label="Scene navigation"><span></span><a href="#scene-2">Next</a></nav>
+        </section>
+
+        <!-- Scene 2: your ad -->
+        <section class="scene scene-light s2" id="scene-2" data-scene="ad" aria-label="Scene 2">
+          <div class="scene-grid grid-2">
+            <div class="col-text">
+              <p class="eyebrow">Your ad</p>
+              <div class="beats">
+                <h2 class="headline beat beat-a">Your branded ad runs in digital campaigns.</h2>
+                <h2 class="headline beat beat-b">You pay GOAL for each click.</h2>
+              </div>
+              <div class="panel counter-panel">
+                <div class="panel-label">Paid clicks</div>
+                <div class="num" id="s2-num">2</div>
+              </div>
+            </div>
+            <div class="col-visual">
+              <div class="duo">
+                <div class="desktop" id="s2-desktop">
+                  <div class="desktop-bar" aria-hidden="true"><span class="dbar-dot"></span><span class="dbar-dot"></span><span class="dbar-dot"></span><span class="dbar-pill"></span></div>
+                  <div class="desktop-screen">
+                    <div class="searchbar"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span>home insurance</span></div>
+                    <div class="results">
+                      <div class="ad ad-wide" id="s2-ad-d">
+                        <div class="ad-body">
+                          <div class="ad-head"><span class="ad-tag">Ad</span><span class="ad-name">Your Agency</span></div>
+                          <div class="sk sk-dark w80"></div>
+                          <div class="sk sk-light w60"></div>
+                        </div>
+                        <div class="ad-btn" id="s2-btn-d">Get a quote</div>
+                      </div>
+                      <div class="result"><div class="sk sk-dark w60"></div><div class="sk sk-light w90"></div><div class="sk sk-light w45"></div></div>
+                      <div class="result"><div class="sk sk-dark w70"></div><div class="sk sk-light w85"></div><div class="sk sk-light w50"></div></div>
+                      <div class="result"><div class="sk sk-dark w55"></div><div class="sk sk-light w80"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone" id="s2-phone">
+                  <div class="phone-notch" aria-hidden="true"></div>
+                  <div class="phone-screen">
+                    <div class="searchbar"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><span>home insurance</span></div>
+                    <div class="results">
+                      <div class="ad" id="s2-ad-p">
+                        <div class="ad-head"><span class="ad-tag">Ad</span><span class="ad-name">Your Agency</span></div>
+                        <div class="sk sk-dark w80"></div>
+                        <div class="sk sk-light w60"></div>
+                        <div class="ad-btn" id="s2-btn-p">Get a quote</div>
+                      </div>
+                      <div class="result"><div class="sk sk-dark w70"></div><div class="sk sk-light w90"></div><div class="sk sk-light w50"></div></div>
+                      <div class="result"><div class="sk sk-dark w60"></div><div class="sk sk-light w85"></div><div class="sk sk-light w45"></div></div>
+                      <div class="result"><div class="sk sk-dark w75"></div><div class="sk sk-light w80"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <svg class="cursor" id="s2-cursor" aria-hidden="true"><use href="#i-cursor"/></svg>
+                <div class="tap tap-sm" id="s2-tap-d" aria-hidden="true"><span class="tap-ring"></span><span class="tap-dot"></span></div>
+                <div class="tap" id="s2-tap-p" aria-hidden="true"><span class="tap-ring"></span><span class="tap-dot"></span></div>
+                <div class="chip chip-fly" id="s2-fly-d" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Paid click</div>
+                <div class="chip chip-fly" id="s2-fly-p" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Paid click</div>
+              </div>
+            </div>
+          </div>
+          <nav class="nojs-nav" aria-label="Scene navigation"><a href="#scene-1">Previous</a><a href="#scene-3">Next</a></nav>
+        </section>
+
+        <!-- Scene 3: clicks to leads -->
+        <section class="scene scene-light s3" id="scene-3" data-scene="leads" aria-label="Scene 3">
+          <div class="scene-grid grid-3">
+            <div class="col-text">
+              <p class="eyebrow">Clicks to leads</p>
+              <div class="beats">
+                <h2 class="headline beat beat-a">About 6 in 10 clicks become leads, on average.</h2>
+                <h2 class="headline beat beat-b">Every click is paid, lead or not.</h2>
+              </div>
+              <div class="ratio">
+                <span class="ratio-n" id="s3-num">6</span><span class="ratio-of">of 10</span>
+                <span class="ratio-avg">Average</span>
+              </div>
+              <div class="clicks-row">
+                <div class="group-label">Paid clicks</div>
+                <div class="slots" id="s3-slots">
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                  <span class="slot"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-form">
+              <div class="form-mini" id="s3-form">
+                <div class="form-mini-head"><svg class="ico" aria-hidden="true"><use href="#i-form"/></svg>Your form</div>
+                <div class="sk sk-light w100 tall"></div>
+                <div class="sk sk-light w100 tall"></div>
+                <div class="sk sk-light w100 tall"></div>
+                <div class="form-mini-btn" id="s3-submit">Submit</div>
+              </div>
+            </div>
+            <div class="col-groups">
+              <div class="group-label">Leads</div>
+              <div class="lead-stack" id="s3-leads">
+                <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
+                <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
+                <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
+                <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
+                <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
+                <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
+              </div>
+              <div class="group-label muted">No form submitted</div>
+              <div class="gray-row" id="s3-none">
+                <span class="dot click" data-kind="none"></span>
+                <span class="dot click" data-kind="none"></span>
+                <span class="dot click" data-kind="none"></span>
+                <span class="dot click" data-kind="none"></span>
+              </div>
+            </div>
+          </div>
+          <nav class="nojs-nav" aria-label="Scene navigation"><a href="#scene-2">Previous</a><a href="#scene-4">Next</a></nav>
+        </section>
+
+        <!-- Scene 4: every lead -->
+        <section class="scene scene-light s4" id="scene-4" data-scene="lead" aria-label="Scene 4">
+          <div class="scene-grid grid-4">
+            <div class="col-text">
+              <p class="eyebrow">Every lead</p>
+              <div class="beats beats-2">
+                <h2 class="headline beat beat-a">Every lead saw your ad.</h2>
+                <h2 class="headline beat beat-b">Then completed your full form, often on a phone.</h2>
+              </div>
+              <aside class="panel inbox">
+                <div class="panel-head"><svg class="ico" aria-hidden="true"><use href="#i-inbox"/></svg>Your inbox</div>
+                <div class="lead-list">
+                  <div class="lead-card-big" id="s4-card-p">
+                    <span class="dot" aria-hidden="true"></span>
+                    <div class="lc-col"><div class="lc-name">Jordan Lee</div><div class="lc-line">12 Elm Street</div></div>
+                    <div class="lc-col"><div class="lc-line"><span class="lc-under" id="s4-under">555 014 2200</span></div><div class="lc-line">Home and auto</div></div>
+                  </div>
+                  <div class="lead-card-big" id="s4-card-d">
+                    <span class="dot" aria-hidden="true"></span>
+                    <div class="lc-col"><div class="lc-name">Casey Morgan</div><div class="lc-line">48 Lake Road</div></div>
+                    <div class="lc-col"><div class="lc-line">555 014 7310</div><div class="lc-line">Auto</div></div>
+                  </div>
+                </div>
+                <ul class="checks checks-row">
+                  <li class="check-item"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="check-text">Saw your ad</span></li>
+                  <li class="check-item"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="check-text">Completed your form</span></li>
+                </ul>
+                <p class="footnote" id="s4-foot">Rarely, a shopper mistypes a detail or enters false info.</p>
+              </aside>
+            </div>
+            <div class="col-visual">
+              <div class="duo">
+                <div class="desktop" id="s4-desktop">
+                  <div class="desktop-bar" aria-hidden="true"><span class="dbar-dot"></span><span class="dbar-dot"></span><span class="dbar-dot"></span><span class="dbar-pill"></span></div>
+                  <div class="desktop-screen">
+                    <div class="form-head">Your Agency</div>
+                    <div class="form-grid">
+                      <div class="field"><span class="f-label">Name</span><span class="f-input" data-value="Casey Morgan">Casey Morgan</span></div>
+                      <div class="field"><span class="f-label">Address</span><span class="f-input" data-value="48 Lake Road">48 Lake Road</span></div>
+                      <div class="field"><span class="f-label">Phone</span><span class="f-input" data-value="555 014 7310">555 014 7310</span></div>
+                      <div class="field"><span class="f-label">Coverage</span><span class="f-input" data-value="Auto">Auto</span></div>
+                    </div>
+                    <div class="f-submit f-submit-d" id="s4-submit-d">Submit</div>
+                  </div>
+                </div>
+                <div class="phone phone-form" id="s4-phone">
+                  <div class="phone-notch" aria-hidden="true"></div>
+                  <div class="phone-screen">
+                    <div class="form-head">Your Agency</div>
+                    <div class="field"><span class="f-label">Name</span><span class="f-input" data-value="Jordan Lee">Jordan Lee</span></div>
+                    <div class="field"><span class="f-label">Address</span><span class="f-input" data-value="12 Elm Street">12 Elm Street</span></div>
+                    <div class="field"><span class="f-label">Phone</span><span class="f-input" data-value="555 014 2200">555 014 2200</span></div>
+                    <div class="field"><span class="f-label">Coverage</span><span class="f-input" data-value="Home and auto">Home and auto</span></div>
+                    <div class="f-submit" id="s4-submit-p">Submit</div>
+                  </div>
+                </div>
+                <svg class="cursor" id="s4-cursor" aria-hidden="true"><use href="#i-cursor"/></svg>
+                <div class="tap tap-sm" id="s4-tap-d" aria-hidden="true"><span class="tap-ring"></span><span class="tap-dot"></span></div>
+                <div class="tap" id="s4-tap-p" aria-hidden="true"><span class="tap-ring"></span><span class="tap-dot"></span></div>
+              </div>
+            </div>
+          </div>
+          <nav class="nojs-nav" aria-label="Scene navigation"><a href="#scene-3">Previous</a><a href="#scene-5">Next</a></nav>
+        </section>
+
+        <!-- Scene 5: recap and close -->
+        <section class="scene scene-navy s5" id="scene-5" data-scene="close" aria-label="Scene 5">
+          <div class="closing">
+            <ul class="recap">
+              <li class="recap-item"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="recap-text">You pay per click.</span></li>
+              <li class="recap-item"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="recap-text">Clicks become leads.</span></li>
+              <li class="recap-item"><svg class="check-draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="recap-text">Every lead saw your ad.</span></li>
+            </ul>
+            <div class="close-brand">
+              <img class="wordmark wordmark-white" src="../goal-wordmark-white.png" alt="GOAL">
+              <p class="tagline">Your ads. Your leads. Your customers.</p>
+              <button class="cta" type="button" id="cta">Talk with your GOAL team</button>
+            </div>
+          </div>
+          <nav class="nojs-nav" aria-label="Scene navigation"><a href="#scene-4">Previous</a><span></span></nav>
+        </section>
+
+      </div>
+
+      <div class="captionbar">
+        <p class="caption" id="caption" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <button class="replay-inline" type="button" id="replay-inline" hidden><svg class="ico" aria-hidden="true"><use href="#i-replay"/></svg>Replay</button>
+
+    </div>
+  </div>
+
+  <div class="controls" id="controls" role="toolbar" aria-label="Playback controls">
+    <div class="controls-group">
+      <button class="ctl" type="button" id="btn-prev" aria-label="Previous scene (Left arrow)"><svg class="ico" aria-hidden="true"><use href="#i-prev"/></svg><span>Prev</span></button>
+      <button class="ctl ctl-play" type="button" id="btn-play" aria-label="Pause (Space)"><svg class="ico" aria-hidden="true"><use href="#i-pause"/></svg><span id="btn-play-text">Pause</span></button>
+      <button class="ctl" type="button" id="btn-next" aria-label="Next scene (Right arrow)"><span>Next</span><svg class="ico" aria-hidden="true"><use href="#i-next"/></svg></button>
+      <button class="ctl" type="button" id="btn-replay" aria-label="Replay from the start (R)"><svg class="ico" aria-hidden="true"><use href="#i-replay"/></svg><span>Replay</span></button>
+    </div>
+    <div class="controls-group">
+      <button class="ctl" type="button" id="btn-captions" aria-pressed="true" aria-label="Captions on (C)"><svg class="ico" aria-hidden="true"><use href="#i-caption"/></svg><span>Captions</span></button>
+      <button class="ctl" type="button" id="btn-scroll" aria-pressed="false" aria-label="Scroll view"><svg class="ico" aria-hidden="true"><use href="#i-scroll"/></svg><span>Scroll view</span></button>
+    </div>
+    <p class="kbd-hint" aria-hidden="true">Space play or pause. Arrows step. R replay. C captions.</p>
+  </div>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

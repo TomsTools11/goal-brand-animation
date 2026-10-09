@@ -1,0 +1,7 @@
+node_modules/
+public/
+.vercel/
+.DS_Store
+
+# Internal reference template, not part of the deploy
+3-structured-dashboard.html

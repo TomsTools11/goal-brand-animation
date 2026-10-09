@@ -1,0 +1,13 @@
+{
+  "name": "goal-brand-animation",
+  "version": "1.7.0",
+  "private": true,
+  "description": "GOAL motion explainer: a 45 second, self-contained HTML animation of how a GOAL campaign works.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,219 @@
+/* ==========================================================================
+   GOAL Design System — Colors & Type
+   Source: GOAL Platform Style Guide v1.0 (checkoutgoal.com)
+   ========================================================================== */
+
+/* Inter (Google Fonts) — loaded once per doc. Swap to local /fonts if offline. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* -------- Brand / Primary -------- */
+  --color-brand-primary:        #057BE5;  /* Primary Blue — links, brand, in-product CTAs */
+  --color-brand-primary-hover:  #0C6EC5;
+  --color-brand-secondary:      #308ED6;  /* Sky Blue — utility / login */
+  --color-brand-accent:         #3BEECA;  /* Mint — underline highlights only */
+
+  /* -------- CTA (high-intent) -------- */
+  --color-cta-magenta:          #E83A89;  /* Use only for the single top conversion CTA */
+  --color-cta-magenta-hover:    #BE2169;
+  --color-cta-magenta-disabled: #F2B0CD;
+
+  /* -------- Dark surfaces -------- */
+  --color-surface-navy:         #00172D;  /* Dark hero, social proof bands */
+  --color-surface-navy-deep:    #001020;  /* Footer */
+
+  /* -------- Neutrals / text -------- */
+  --color-text-ink:             #0F1B2D;  /* Headings on light */
+  --color-text-body:            #2B3442;  /* Body copy */
+  --color-text-muted:           #6A7482;  /* Captions, fine print */
+  --color-text-on-dark:         #F2F2F2;  /* Text on navy */
+
+  /* -------- Surfaces / lines -------- */
+  --color-surface-white:        #FFFFFF;
+  --color-surface-off-white:    #F8FAFC;
+  --color-surface-gray-bg:      #EFF2F7;
+  --color-border-divider:       #F1F1F1;
+  --color-border-input:         #D6DCE5;
+
+  /* -------- System / Semantic -------- */
+  --color-success:              #2BBF7A;
+  --color-warning:              #F0A93B;
+  --color-error:                #E5484D;
+  --color-info:                 #057BE5;
+
+  /* -------- Type families -------- */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* -------- Type sizes (desktop) -------- */
+  --fs-display:   50px;  /* H1  */
+  --fs-h2:        36px;
+  --fs-h3:        26px;
+  --fs-eyebrow-hero: 28px;
+  --fs-eyebrow:   14px;
+  --fs-body-lg:   18px;
+  --fs-body:      16px;
+  --fs-caption:   13px;
+  --fs-button:    16px;
+
+  /* -------- Line heights -------- */
+  --lh-display: 1.08;
+  --lh-h2:      1.15;
+  --lh-h3:      1.25;
+  --lh-body:    1.55;
+  --lh-eyebrow: 1.30;
+  --lh-button:  1.20;
+
+  /* -------- Tracking -------- */
+  --tracking-tight:   -0.01em;
+  --tracking-eyebrow:  0.06em;
+  --tracking-caption:  0.01em;
+  --tracking-button:   0.02em;
+
+  /* -------- Radii -------- */
+  --radius-input:  6px;
+  --radius-button: 4px;
+  --radius-pill:   28px;   /* hero CTA only */
+  --radius-card-product:   12px;
+  --radius-card-marketing: 18px;
+  --radius-modal:  16px;
+
+  /* -------- Spacing scale (4px base) -------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+
+  /* -------- Elevation / shadows -------- */
+  --elev-0: none;
+  --elev-1: 0 2px 6px rgba(0, 23, 45, 0.06);
+  --elev-2: 0 4px 14px rgba(0, 23, 45, 0.08);
+  --elev-3: 0 12px 32px rgba(0, 23, 45, 0.16);
+
+  /* -------- Layout -------- */
+  --container-max: 1200px;
+  --container-xxl: 1400px;
+  --header-height-desktop: 72px;
+  --header-height-mobile:  64px;
+
+  /* -------- Focus -------- */
+  --focus-ring: 2px solid #057BE5;
+  --focus-ring-offset: 2px;
+}
+
+/* ==========================================================================
+   Semantic type styles — apply via class OR by element
+   ========================================================================== */
+
+html, body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-body);
+  background: var(--color-surface-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.h1, h1 {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-ink);
+  margin: 0;
+}
+
+.h2, h2 {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-ink);
+  margin: 0;
+}
+
+.h3, h3 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  color: var(--color-text-ink);
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-eyebrow);
+  line-height: var(--lh-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-brand-secondary);
+}
+
+.eyebrow--hero {
+  font-size: var(--fs-eyebrow-hero);
+}
+
+.eyebrow--on-dark { color: var(--color-brand-accent); }
+
+.body-lg {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+  color: var(--color-text-body);
+}
+
+.body, p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+.caption {
+  font-size: var(--fs-caption);
+  line-height: 1.45;
+  letter-spacing: var(--tracking-caption);
+  color: var(--color-text-muted);
+}
+
+/* Mint-underline highlight — one per page */
+.mint-underline {
+  background-image: linear-gradient(var(--color-brand-accent), var(--color-brand-accent));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 3px;
+  padding-bottom: 2px;
+}
+
+/* Emphasis: use semibold, not italic (italic = direct customer quote only) */
+strong, b { font-weight: 600; color: var(--color-text-ink); }
+em, cite  { font-style: italic; color: var(--color-text-body); }
+
+/* Links */
+a {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Focus */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Responsive type (mobile) */
+@media (max-width: 767px) {
+  :root {
+    --fs-display: 32px;
+    --fs-h2:      28px;
+  }
+}
