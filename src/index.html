@@ -24,6 +24,7 @@
   <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
   <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.5-5.8"/><path d="M4 4.5v4.5h4.5"/></symbol>
   <symbol id="i-caption" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M7.5 12h9M7.5 15h5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M5 3l14.5 9-6.3 1.4-3.4 6.1z"/></symbol>
   <symbol id="i-scroll" viewBox="0 0 24 24"><rect x="5.5" y="3.5" width="13" height="17" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
 </svg>
@@ -131,9 +132,15 @@
                 <h2 class="headline beat beat-a">About 6 in 10 clicks become leads, on average.</h2>
                 <h2 class="headline beat beat-b">Every click is paid, lead or not.</h2>
               </div>
-              <div class="ratio">
-                <span class="ratio-n" id="s3-num">6</span><span class="ratio-of">of 10</span>
-                <span class="ratio-avg">Average</span>
+              <div class="ratios">
+                <div class="ratio">
+                  <span class="ratio-n" id="s3-num">6</span><span class="ratio-of">of 10</span>
+                  <span class="ratio-avg">Leads, on average</span>
+                </div>
+                <div class="ratio ratio-call">
+                  <span class="ratio-n" id="s3-calls">1</span><span class="ratio-of">of 10</span>
+                  <span class="ratio-avg">Direct calls, free</span>
+                </div>
               </div>
               <div class="clicks-row">
                 <div class="group-label">Paid clicks</div>
@@ -170,9 +177,16 @@
                 <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
                 <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
               </div>
+              <div class="group-label group-call">Direct call</div>
+              <div class="call-card" id="s3-call">
+                <span class="card-face" aria-hidden="true"></span>
+                <span class="dot click" data-kind="call"></span>
+                <svg class="ico call-ico" aria-hidden="true"><use href="#i-phone"/></svg>
+                <span class="call-text">Calls you directly</span>
+                <span class="chip chip-free"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Free</span>
+              </div>
               <div class="group-label muted">No form submitted</div>
               <div class="gray-row" id="s3-none">
-                <span class="dot click" data-kind="none"></span>
                 <span class="dot click" data-kind="none"></span>
                 <span class="dot click" data-kind="none"></span>
                 <span class="dot click" data-kind="none"></span>

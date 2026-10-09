@@ -298,15 +298,16 @@ button { font: inherit; }
 .s2 .num { color: var(--t-text); }
 
 /* Scene 3 */
-.ratio { display: flex; align-items: baseline; gap: 20px; margin-top: 48px; flex-wrap: wrap; }
+.ratios { display: flex; gap: 56px; margin-top: 44px; }
+.ratio { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
 .ratio-n {
   font-size: var(--fs-num); font-weight: 900; font-variant-numeric: tabular-nums;
   color: var(--t-text); line-height: 1; letter-spacing: -0.03em; display: inline-block; transform-origin: left bottom;
 }
-.ratio-of { font-size: 56px; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; line-height: 1; }
+.ratio-of { font-size: 48px; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; line-height: 1; }
 .ratio-avg {
   font-size: var(--fs-eb); font-weight: 700; color: var(--t-muted); letter-spacing: 0.08em; text-transform: uppercase;
-  flex-basis: 100%; margin-top: 10px;
+  flex-basis: 100%; margin-top: 6px;
 }
 .clicks-row { margin-top: 44px; }
 .slots { display: flex; gap: 16px; }
@@ -324,9 +325,14 @@ button { font: inherit; }
 .form-mini-btn { margin-top: 4px; height: 52px; }
 .col-groups { display: flex; flex-direction: column; justify-content: center; }
 .group-label { font-size: var(--fs-eb); font-weight: 700; color: var(--t-text); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
-.group-label.muted { color: var(--t-muted); margin-top: 40px; }
-.lead-stack { display: flex; flex-direction: column; gap: 12px; }
-.lead-card { position: relative; display: flex; align-items: center; gap: 24px; height: 76px; padding: 0 20px; }
+.group-label.muted { color: var(--t-muted); margin-top: 32px; }
+.lead-stack { display: flex; flex-direction: column; gap: 10px; }
+.lead-card { position: relative; display: flex; align-items: center; gap: 24px; height: 64px; padding: 0 20px; }
+.call-card { position: relative; display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 20px; }
+.call-card .call-ico { position: relative; z-index: 1; width: 30px; height: 30px; color: var(--sky); }
+.call-card .call-text { position: relative; z-index: 1; font-size: var(--fs-ui); font-weight: 600; color: var(--t-text); }
+.call-card .chip-free { position: relative; z-index: 1; margin-left: auto; }
+.group-label.group-call { margin-top: 32px; }
 .card-face {
   position: absolute; inset: 0; background: var(--t-surface); border: 1px solid var(--t-line); border-radius: var(--radius);
   box-shadow: var(--t-card-shadow); transform-origin: left center;
@@ -414,7 +420,7 @@ button { font: inherit; }
 .stage[data-orient="portrait"] .duo .phone { --sp: 0.85px; }
 .stage[data-orient="portrait"] .dbar-pill { width: 240px; }
 .stage[data-orient="portrait"] .counter-panel { margin-top: 32px; }
-.stage[data-orient="portrait"] .ratio { margin-top: 36px; }
+.stage[data-orient="portrait"] .ratios { margin-top: 32px; gap: 48px; }
 .stage[data-orient="portrait"] .clicks-row { margin-top: 36px; }
 .stage[data-orient="portrait"] .inbox { margin-top: 28px; }
 .stage[data-orient="portrait"] .s1 .hero, .stage[data-orient="portrait"] .s5 .closing { height: auto; }
@@ -494,8 +500,11 @@ button { font: inherit; }
 .mode-scroll .s1 .headline, .no-js .s1 .headline { max-width: none; }
 .mode-scroll .counter-panel, .no-js .counter-panel { margin-top: 20px; padding: 16px 22px; min-width: 0; }
 .mode-scroll .col-visual, .no-js .col-visual { justify-content: flex-start; }
-.mode-scroll .ratio, .no-js .ratio { margin-top: 20px; gap: 10px; }
-.mode-scroll .ratio-of, .no-js .ratio-of { font-size: 28px; }
+.mode-scroll .ratios, .no-js .ratios { margin-top: 20px; gap: 24px; flex-wrap: wrap; }
+.mode-scroll .ratio, .no-js .ratio { gap: 8px; }
+.mode-scroll .call-card, .no-js .call-card { height: 48px; gap: 10px; padding: 0 12px; }
+.mode-scroll .call-card .call-ico, .no-js .call-card .call-ico { width: 18px; height: 18px; }
+.mode-scroll .ratio-of, .no-js .ratio-of { font-size: 24px; }
 .mode-scroll .clicks-row, .no-js .clicks-row { margin-top: 20px; }
 .mode-scroll .slots, .no-js .slots { gap: 8px; flex-wrap: wrap; }
 .mode-scroll .slot, .no-js .slot { width: 26px; height: 26px; }

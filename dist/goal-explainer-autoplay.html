@@ -309,15 +309,16 @@ button { font: inherit; }
 .s2 .num { color: var(--t-text); }
 
 /* Scene 3 */
-.ratio { display: flex; align-items: baseline; gap: 20px; margin-top: 48px; flex-wrap: wrap; }
+.ratios { display: flex; gap: 56px; margin-top: 44px; }
+.ratio { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
 .ratio-n {
   font-size: var(--fs-num); font-weight: 900; font-variant-numeric: tabular-nums;
   color: var(--t-text); line-height: 1; letter-spacing: -0.03em; display: inline-block; transform-origin: left bottom;
 }
-.ratio-of { font-size: 56px; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; line-height: 1; }
+.ratio-of { font-size: 48px; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; line-height: 1; }
 .ratio-avg {
   font-size: var(--fs-eb); font-weight: 700; color: var(--t-muted); letter-spacing: 0.08em; text-transform: uppercase;
-  flex-basis: 100%; margin-top: 10px;
+  flex-basis: 100%; margin-top: 6px;
 }
 .clicks-row { margin-top: 44px; }
 .slots { display: flex; gap: 16px; }
@@ -335,9 +336,14 @@ button { font: inherit; }
 .form-mini-btn { margin-top: 4px; height: 52px; }
 .col-groups { display: flex; flex-direction: column; justify-content: center; }
 .group-label { font-size: var(--fs-eb); font-weight: 700; color: var(--t-text); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
-.group-label.muted { color: var(--t-muted); margin-top: 40px; }
-.lead-stack { display: flex; flex-direction: column; gap: 12px; }
-.lead-card { position: relative; display: flex; align-items: center; gap: 24px; height: 76px; padding: 0 20px; }
+.group-label.muted { color: var(--t-muted); margin-top: 32px; }
+.lead-stack { display: flex; flex-direction: column; gap: 10px; }
+.lead-card { position: relative; display: flex; align-items: center; gap: 24px; height: 64px; padding: 0 20px; }
+.call-card { position: relative; display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 20px; }
+.call-card .call-ico { position: relative; z-index: 1; width: 30px; height: 30px; color: var(--sky); }
+.call-card .call-text { position: relative; z-index: 1; font-size: var(--fs-ui); font-weight: 600; color: var(--t-text); }
+.call-card .chip-free { position: relative; z-index: 1; margin-left: auto; }
+.group-label.group-call { margin-top: 32px; }
 .card-face {
   position: absolute; inset: 0; background: var(--t-surface); border: 1px solid var(--t-line); border-radius: var(--radius);
   box-shadow: var(--t-card-shadow); transform-origin: left center;
@@ -425,7 +431,7 @@ button { font: inherit; }
 .stage[data-orient="portrait"] .duo .phone { --sp: 0.85px; }
 .stage[data-orient="portrait"] .dbar-pill { width: 240px; }
 .stage[data-orient="portrait"] .counter-panel { margin-top: 32px; }
-.stage[data-orient="portrait"] .ratio { margin-top: 36px; }
+.stage[data-orient="portrait"] .ratios { margin-top: 32px; gap: 48px; }
 .stage[data-orient="portrait"] .clicks-row { margin-top: 36px; }
 .stage[data-orient="portrait"] .inbox { margin-top: 28px; }
 .stage[data-orient="portrait"] .s1 .hero, .stage[data-orient="portrait"] .s5 .closing { height: auto; }
@@ -505,8 +511,11 @@ button { font: inherit; }
 .mode-scroll .s1 .headline, .no-js .s1 .headline { max-width: none; }
 .mode-scroll .counter-panel, .no-js .counter-panel { margin-top: 20px; padding: 16px 22px; min-width: 0; }
 .mode-scroll .col-visual, .no-js .col-visual { justify-content: flex-start; }
-.mode-scroll .ratio, .no-js .ratio { margin-top: 20px; gap: 10px; }
-.mode-scroll .ratio-of, .no-js .ratio-of { font-size: 28px; }
+.mode-scroll .ratios, .no-js .ratios { margin-top: 20px; gap: 24px; flex-wrap: wrap; }
+.mode-scroll .ratio, .no-js .ratio { gap: 8px; }
+.mode-scroll .call-card, .no-js .call-card { height: 48px; gap: 10px; padding: 0 12px; }
+.mode-scroll .call-card .call-ico, .no-js .call-card .call-ico { width: 18px; height: 18px; }
+.mode-scroll .ratio-of, .no-js .ratio-of { font-size: 24px; }
 .mode-scroll .clicks-row, .no-js .clicks-row { margin-top: 20px; }
 .mode-scroll .slots, .no-js .slots { gap: 8px; flex-wrap: wrap; }
 .mode-scroll .slot, .no-js .slot { width: 26px; height: 26px; }
@@ -583,6 +592,7 @@ button { font: inherit; }
   <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
   <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.5-5.8"/><path d="M4 4.5v4.5h4.5"/></symbol>
   <symbol id="i-caption" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M7.5 12h9M7.5 15h5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M5 3l14.5 9-6.3 1.4-3.4 6.1z"/></symbol>
   <symbol id="i-scroll" viewBox="0 0 24 24"><rect x="5.5" y="3.5" width="13" height="17" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
 </svg>
@@ -690,9 +700,15 @@ button { font: inherit; }
                 <h2 class="headline beat beat-a">About 6 in 10 clicks become leads, on average.</h2>
                 <h2 class="headline beat beat-b">Every click is paid, lead or not.</h2>
               </div>
-              <div class="ratio">
-                <span class="ratio-n" id="s3-num">6</span><span class="ratio-of">of 10</span>
-                <span class="ratio-avg">Average</span>
+              <div class="ratios">
+                <div class="ratio">
+                  <span class="ratio-n" id="s3-num">6</span><span class="ratio-of">of 10</span>
+                  <span class="ratio-avg">Leads, on average</span>
+                </div>
+                <div class="ratio ratio-call">
+                  <span class="ratio-n" id="s3-calls">1</span><span class="ratio-of">of 10</span>
+                  <span class="ratio-avg">Direct calls, free</span>
+                </div>
               </div>
               <div class="clicks-row">
                 <div class="group-label">Paid clicks</div>
@@ -729,9 +745,16 @@ button { font: inherit; }
                 <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
                 <div class="lead-card"><span class="card-face" aria-hidden="true"></span><span class="dot click" data-kind="lead"></span><div class="sk sk-dark w-name"></div><div class="sk sk-light w-line"></div></div>
               </div>
+              <div class="group-label group-call">Direct call</div>
+              <div class="call-card" id="s3-call">
+                <span class="card-face" aria-hidden="true"></span>
+                <span class="dot click" data-kind="call"></span>
+                <svg class="ico call-ico" aria-hidden="true"><use href="#i-phone"/></svg>
+                <span class="call-text">Calls you directly</span>
+                <span class="chip chip-free"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Free</span>
+              </div>
               <div class="group-label muted">No form submitted</div>
               <div class="gray-row" id="s3-none">
-                <span class="dot click" data-kind="none"></span>
                 <span class="dot click" data-kind="none"></span>
                 <span class="dot click" data-kind="none"></span>
                 <span class="dot click" data-kind="none"></span>
@@ -1066,20 +1089,23 @@ const CONFIG = {
       captions: [
         { at: 0, text: 'About 6 in 10 clicks become leads, on average.' },
         { at: 1400, text: 'Ten paid clicks travel to your form.' },
+        { at: 3700, text: 'One click calls you directly. Calls are free.' },
         { at: 7100, text: 'Every click is paid, lead or not.' }
       ],
       build: function (root) {
         const eb = q('.eyebrow', root), beatA = q('.beat-a', root), beatB = q('.beat-b', root);
-        const ratio = q('.ratio', root), num = q('#s3-num'), clicksRow = q('.clicks-row', root);
+        const ratio = q('.ratios', root), num = q('#s3-num'), calls = q('#s3-calls'), clicksRow = q('.clicks-row', root);
+        const callCard = q('#s3-call'), callFace = q('#s3-call .card-face'), callDot = q('#s3-call .dot');
         const form = q('#s3-form'), submit = q('#s3-submit');
         const labels = qa('.col-groups .group-label', root), faces = qa('.card-face', root), cards = qa('.lead-card', root);
         const slots = qa('.slot', root);
         const leadDots = qa('.dot.click[data-kind="lead"]', root), noneDots = qa('.dot.click[data-kind="none"]', root);
-        const order = ['L', 'L', 'N', 'L', 'L', 'N', 'L', 'N', 'L', 'N'];
-        const tracks = [rise(eb, 0), rise(beatA, 80), rise(ratio, 160), rise(clicksRow, 240), rise(form, 320, 500), rise(labels[0], 400), rise(labels[1], 480)];
+        const order = ['L', 'L', 'N', 'L', 'C', 'L', 'L', 'N', 'L', 'N'];
+        const tracks = [rise(eb, 0), rise(beatA, 80), rise(ratio, 160), rise(clicksRow, 240), rise(form, 320, 500)];
+        labels.forEach(function (l, i) { tracks.push(rise(l, 400 + i * 80)); });
         let li = 0, ni = 0, leads = 0;
         order.forEach(function (kind, k) {
-          const dot = kind === 'L' ? leadDots[li++] : noneDots[ni++];
+          const dot = kind === 'L' ? leadDots[li++] : (kind === 'C' ? callDot : noneDots[ni++]);
           const card = kind === 'L' ? cards[li - 1] : null;
           const face = kind === 'L' ? faces[li - 1] : null;
           const slot = slots[k];
@@ -1087,6 +1113,22 @@ const CONFIG = {
           const atForm = delta(submit, dot);
           atForm.y -= 60;
           const start = 1000 + k * 520;
+          if (kind === 'C') {
+            // The caller skips the form: one long arc straight from the receipts row to the call card.
+            tracks.push(tr(start, 1180, E.inOut, function (p) {
+              const pt = arcPoint(fromSlot, { x: 0, y: 0 }, 160, p); setXf(dot, pt.x, pt.y, 1);
+            }));
+            tracks.push(draw(q('path', slot), start + 80, 350));
+            const arriveC = start + 1180;
+            const callBits = qa('.call-ico, .call-text, .chip-free', callCard);
+            tracks.push(tr(arriveC - 60, 420, E.out, function (p) {
+              callFace.style.opacity = p; setXf(callFace, 0, 0, 0.6 + 0.4 * p);
+              callBits.forEach(function (b) { b.style.opacity = p; });
+            }));
+            tracks.push(count(calls, arriveC + 60, 0, 1));
+            tracks.push(tr(7300 + k * 60, 520, E.out, function (p) { setXf(slot, 0, 0, 1 + 0.12 * E.pulse(p)); }));
+            return;
+          }
           // The dot waits on its receipt slot, then travels to the form and on to its group.
           tracks.push(tr(start, 620, E.inOut, function (p) {
             const pt = arcPoint(fromSlot, atForm, 90, p); setXf(dot, pt.x, pt.y, 1);
