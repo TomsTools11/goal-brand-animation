@@ -25,6 +25,10 @@ No dependencies. Node 20 or newer.
 
 The repo is set up for Vercel as a static site: `vercel.json` runs `node build.mjs` and serves `public/`. The clean autoplay build is the site root. The full player is at `/player`. Either page also accepts `?controls=0` and `?captions=0` in the URL.
 
+## Mobile
+
+The stage is designed twice: landscape 1920 by 1080 and portrait 1080 by 1920. The player picks the one that matches the viewport's orientation and switches live on rotation, re-measuring every travel path for the new layout. Screens narrower than 700px show icon-only controls.
+
 ## Playback
 
 Space plays or pauses. Left and Right arrows step between scenes. R replays. C toggles captions. The progress segments at the top are clickable. With `prefers-reduced-motion` the piece does not auto-advance and shows each scene in its final state with Previous and Next.

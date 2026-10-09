@@ -37,6 +37,8 @@ const CONFIG = {
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let scale = 1;
+  // Two stage designs: landscape 1920 by 1080, portrait 1080 by 1920 for phones held upright.
+  let STAGE_W = 1920, STAGE_H = 1080, orient = 'landscape';
 
   // ---------- Track helpers ----------
   // A track is {t0, dur, ease, apply(p)}. Base CSS is the final state; tracks
@@ -392,19 +394,26 @@ const CONFIG = {
   const gridCanvas = q('#grid');
   const grid = (function () {
     const ctx = gridCanvas.getContext('2d');
-    const W = 1920, H = 1080, CELL = 28;
-    const cols = Math.floor(W / CELL) + 2, rows = Math.floor(H / CELL) + 2;
-    const ox = (W % CELL) / 2, oy = (H % CELL) / 2;
-    const pts = [], segs = [], table = [];
-    for (let r = 0; r < rows; r++) {
-      table[r] = [];
-      for (let c = 0; c < cols; c++) { const p = { x: ox + c * CELL, y: oy + r * CELL, b: 0, px: 0, py: 0 }; pts.push(p); table[r][c] = p; }
+    const CELL = 28;
+    let W = 1920, H = 1080, pts = [], segs = [], RADIUS = 0, R2 = 0, PUSH = 0;
+    function resize(w, h) {
+      W = w; H = h;
+      gridCanvas.width = W; gridCanvas.height = H;
+      const cols = Math.floor(W / CELL) + 2, rows = Math.floor(H / CELL) + 2;
+      const ox = (W % CELL) / 2, oy = (H % CELL) / 2;
+      const table = [];
+      pts = []; segs = [];
+      for (let r = 0; r < rows; r++) {
+        table[r] = [];
+        for (let c = 0; c < cols; c++) { const p = { x: ox + c * CELL, y: oy + r * CELL, b: 0, px: 0, py: 0 }; pts.push(p); table[r][c] = p; }
+      }
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+        if (c + 1 < cols) segs.push([table[r][c], table[r][c + 1]]);
+        if (r + 1 < rows) segs.push([table[r][c], table[r + 1][c]]);
+      }
+      RADIUS = 0.28 * Math.max(W, H); R2 = RADIUS * RADIUS; PUSH = 0.05 * RADIUS;
     }
-    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
-      if (c + 1 < cols) segs.push([table[r][c], table[r][c + 1]]);
-      if (r + 1 < rows) segs.push([table[r][c], table[r + 1][c]]);
-    }
-    const RADIUS = 0.28 * Math.max(W, H), R2 = RADIUS * RADIUS, PUSH = 0.05 * RADIUS;
+    resize(W, H);
     let pointer = null;
     function focusAt(ms) {
       if (pointer) return { x: pointer.x, y: pointer.y, s: 1 };
@@ -448,17 +457,34 @@ const CONFIG = {
       if (!playing) draw(elapsed);
     });
     stage.addEventListener('pointerleave', function () { pointer = null; if (!playing) draw(elapsed); });
-    return { draw: draw };
+    stage.addEventListener('pointerup', function (e) { if (e.pointerType === 'touch') pointer = null; });
+    stage.addEventListener('pointercancel', function () { pointer = null; });
+    return { draw: draw, resize: resize };
   })();
 
   // ---------- Player state ----------
   let elapsed = 0, playing = false, raf = 0, last = 0, current = -1, ended = false, scrollMode = false;
   let captionShown = '';
 
+  function setOrientation(next) {
+    if (next === orient) return;
+    orient = next;
+    STAGE_W = next === 'portrait' ? 1080 : 1920;
+    STAGE_H = next === 'portrait' ? 1920 : 1080;
+    stage.setAttribute('data-orient', next);
+    grid.resize(STAGE_W, STAGE_H);
+    if (current >= 0) {
+      // Rebuild the active scene so every travel path is measured against the new layout.
+      const i = current;
+      current = -1;
+      if (reduced) showFinal(i); else render();
+    }
+  }
   function fit() {
     if (scrollMode) { scale = 1; return; }
     const r = stageWrap.getBoundingClientRect();
-    scale = Math.min(r.width / 1920, r.height / 1080) || 1;
+    setOrientation(r.height > r.width ? 'portrait' : 'landscape');
+    scale = Math.min(r.width / STAGE_W, r.height / STAGE_H) || 1;
     stage.style.setProperty('--scale', scale.toFixed(5));
   }
 
@@ -672,7 +698,7 @@ const CONFIG = {
   // Exposed for tests only.
   window.__goal = {
     get elapsed() { return elapsed; }, get playing() { return playing; }, get current() { return current; },
-    get ended() { return ended; }, get reduced() { return reduced; }, total: TOTAL,
+    get ended() { return ended; }, get reduced() { return reduced; }, get orient() { return orient; }, total: TOTAL,
     scenes: SCENES.map(function (s) { return { id: s.id, durationMs: s.durationMs, captions: s.captions }; }),
     seek: function (t) { pause(); elapsed = clamp(t, 0, TOTAL - 1); current = -1; render(); },
     showFinal: function (i) { pause(); showFinal(i); }

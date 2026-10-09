@@ -91,7 +91,7 @@ button { font: inherit; }
 .stage[data-theme="navy"] { background: var(--navy); }
 
 /* Grid texture, drawn by the script on the master clock */
-.grid-canvas { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; z-index: 0; }
+.grid-canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 .scenes, .topbar, .captionbar, .replay-inline { position: absolute; }
 .scenes { z-index: 1; }
 
@@ -393,6 +393,34 @@ button { font: inherit; }
 /* No JS navigation links (hidden when the script runs) */
 .nojs-nav { display: none; }
 
+/* ---------- Portrait stage (phones held upright): 1080 by 1920, one column per scene ---------- */
+.stage[data-orient="portrait"] { width: 1080px; height: 1920px; }
+.stage[data-orient="portrait"] .caption { font-size: 30px; }
+.stage[data-orient="portrait"] .scene.is-active { display: flex; flex-direction: column; justify-content: center; }
+.stage[data-orient="portrait"] .scene-grid { display: flex; flex-direction: column; height: auto; row-gap: 40px; align-items: stretch; }
+.stage[data-orient="portrait"] .grid-3 {
+  display: grid; grid-template-columns: 280px 1fr; grid-template-areas: "text text" "form groups";
+  column-gap: 40px; row-gap: 40px; align-items: start;
+}
+.stage[data-orient="portrait"] .grid-3 .col-text { grid-area: text; }
+.stage[data-orient="portrait"] .grid-3 .col-form { grid-area: form; }
+.stage[data-orient="portrait"] .grid-3 .col-groups { grid-area: groups; }
+.stage[data-orient="portrait"] .col-visual { justify-content: center; }
+.stage[data-orient="portrait"] .duo { width: 888px; height: 740px; }
+.stage[data-orient="portrait"] .desktop { width: 700px; height: 620px; }
+.stage[data-orient="portrait"] .desktop-screen { width: 520px; }
+.stage[data-orient="portrait"] .ad-wide { flex-direction: column; align-items: stretch; gap: 12px; }
+.stage[data-orient="portrait"] .ad-wide .ad-btn { width: 100%; margin-top: 6px; }
+.stage[data-orient="portrait"] .duo .phone { --sp: 0.85px; }
+.stage[data-orient="portrait"] .dbar-pill { width: 240px; }
+.stage[data-orient="portrait"] .counter-panel { margin-top: 32px; }
+.stage[data-orient="portrait"] .ratio { margin-top: 36px; }
+.stage[data-orient="portrait"] .clicks-row { margin-top: 36px; }
+.stage[data-orient="portrait"] .inbox { margin-top: 28px; }
+.stage[data-orient="portrait"] .s1 .hero, .stage[data-orient="portrait"] .s5 .closing { height: auto; }
+.stage[data-orient="portrait"] .s1 .headline { font-size: var(--fs-h); }
+.stage[data-orient="portrait"] .replay-inline { right: 50%; transform: translateX(50%); }
+
 /* ---------- Page controls (outside the stage) ---------- */
 .controls {
   flex: none; display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;
@@ -410,6 +438,13 @@ button { font: inherit; }
 .ctl[hidden] { display: none; }
 .kbd-hint { margin: 0; font-size: 13px; color: var(--t-muted); flex-basis: 100%; text-align: center; }
 @media (min-width: 1100px) { .kbd-hint { flex-basis: auto; } }
+@media (max-width: 700px) {
+  .kbd-hint { display: none; }
+  .controls { gap: 8px; padding: 10px 12px; }
+  .ctl { height: 36px; padding: 0 10px; font-size: 14px; }
+  .ctl span { display: none; }
+  .ctl .ico { width: 20px; height: 20px; }
+}
 
 /* Controls hidden: the stage takes the whole viewport */
 .no-controls .controls { display: none; }
