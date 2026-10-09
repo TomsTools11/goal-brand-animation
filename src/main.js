@@ -336,9 +336,9 @@ const CONFIG = {
       id: 'close', durationMs: 8000, theme: 'navy',
       captions: [
         { at: 0, text: 'You pay per click.' },
-        { at: 1000, text: 'Clicks become leads.' },
-        { at: 1700, text: 'Every lead saw your ad.' },
-        { at: 4300, text: 'Your ads. Your leads. Your customers.' }
+        { at: 1000, text: 'About 6 in 10 clicks become leads.' },
+        { at: 1700, text: 'Every lead sees your brand first.' },
+        { at: 4300, text: 'Your brand. Your leads. Never resold.' }
       ],
       build: function (root) {
         const items = qa('.recap-item', root), wm = q('.wordmark-white', root), tag = q('.tagline', root), cta = q('.cta', root);
